@@ -8,16 +8,16 @@ document.getElementById("all").addEventListener("click", allName)
 
 
 function randomName() {
-    for(let i=0 ; i< nickName.length; i++) {
-        document.getElementById(`Name${i}`).innerHTML = ""
-    }
-
+    document.getElementById("Name0").innerHTML = ""
     let rm = Math.floor(Math.random()*nickName.length);
     document.getElementById("Name0").innerHTML = firstName + " " + nickName[rm] + " " + lastName;
 }
 
 function allName() {
+    let all = ""
     for(let i=0 ; i< nickName.length; i++){
-        document.getElementById(`Name${i}`).innerHTML = firstName + " " + nickName[i] + " " + lastName;
+        all += firstName + " " + nickName[i] + " " + lastName + "<br>"
     }
+    console.log(all)
+    document.getElementById("Name0").innerHTML = all;
 }
